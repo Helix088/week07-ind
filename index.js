@@ -9,7 +9,7 @@ const mongodb = require("./db/connect");
 const port = process.env.PORT || 8080;
 const app = express();
 
-const { auth } = require("express-openid-connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 
 const config = {
   authRequired: false,
