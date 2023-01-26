@@ -9,6 +9,18 @@ const mongodb = require("./db/connect");
 const port = process.env.PORT || 8080;
 const app = express();
 
+const { auth } = require("express-openid-connect");
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: "a long, randomly-generated string stored in env",
+  baseURL: "http://localhost:3000",
+  clientID: "0QA1mpv1EgePfKWy95324evYlxJVzJqc",
+  issuerBaseURL: "https://dev-qt3fex4vdfmb5dpl.us.auth0.com",
+};
+
+
 app
   .use(express.json())
   .use(bodyParser.json())
@@ -34,4 +46,12 @@ mongodb.initDb((err, mongodb) => {
     app.listen(port);
     console.log(`Connected to DB and listening on ${port}`);
   }
+});
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
