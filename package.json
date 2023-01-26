@@ -1,5 +1,5 @@
 {
-  "name": "week06-ind",
+  "name": "week07-ind",
   "version": "1.0.0",
   "description": "CSE 341 Project",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Helix088/week06-ind.git"
+    "url": "git+https://github.com/Helix088/week07-ind.git"
   },
   "author": "Chase Patterson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Helix088/week06-ind/issues"
+    "url": "https://github.com/Helix088/week07-ind/issues"
   },
-  "homepage": "https://github.com/Helix088/week06-ind#readme",
+  "homepage": "https://github.com/Helix088/week07-ind#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
