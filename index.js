@@ -55,3 +55,8 @@ app.use(auth(config));
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
+
+app.get("/profile", requiresAuth(), (req, res) => {
+  console.log(JSON.stringify(req.oidc.user));
+  res.send(JSON.stringify(req.oidc.user));
+});
