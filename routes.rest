@@ -1,19 +1,31 @@
 // LOCALHOST 
 ### 
-GET http://localhost:8080/poke-data 
+GET http://localhost:8080/poke-data/pokemon
+
+###
+GET http://localhost:8080/poke-data/trainer-data
 
 ### 
-GET http://localhost:8080/poke-data/63ba2c1898a0c4386448e05f
+GET http://localhost:8080/poke-data/pokemon/63ba2c1898a0c4386448e05f
+
+### 
+GET http://localhost:8080/poke-data/trainer-data/63ba2c1898a0c4386448e06a
 
 // PRODUCTION Deploy 
 ### 
-GET https://week07.onrender.com/poke-data HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data/pokemon HTTP/1.1 content-type: application/json
 
 ### 
-GET https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e05e HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data/trainer-data HTTP/1.1 content-type: application/json
+
+### 
+GET https://week07.onrender.com/poke-data/pokemon/63ba2c1898a0c4386448e05e HTTP/1.1 content-type: application/json
+
+### 
+GET https://week07.onrender.com/poke-data/trainer-data/63ba2c1898a0c4386448e06b HTTP/1.1 content-type: application/json
 
 ###
-POST http://localhost:8080/poke-data
+POST http://localhost:8080/poke-data/pokemon
 content-type: application/json
 
 {
@@ -27,7 +39,20 @@ content-type: application/json
 }
 
 ###
-POST https://week07.onrender.com/poke-data
+POST http://localhost:8080/poke-data/trainer-data
+content-type: application/json
+
+{
+    "name":"Pauruga",
+    "number":"968574",
+    "badges":["Ice, Normal, Flying"],
+    "height":"1.7 m (5′07″)",
+    "weight":"71.7 kg (158 lbs)"
+}
+
+
+###
+POST https://week07.onrender.com/poke-data/pokemon
 content-type: application/json
 
 {
@@ -41,7 +66,19 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:8080/poke-data/63ba2c1898a0c4386448e05a
+POST https://week07.onrender.com/poke-data/trainer-data
+content-type: application/json
+
+{
+    "name":"Stersh",
+    "number":"142536",
+    "badges":["Grass, Fire, Ghost"],
+    "height":"1.8 m (5′11″)",
+    "weight":"95.3 kg (210 lbs)"
+}
+
+###
+PUT http://localhost:8080/poke-data/pokemon/63ba2c1898a0c4386448e05a
 content-type: application/json
 
 {
@@ -55,7 +92,19 @@ content-type: application/json
 }
 
 ###
-PUT https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e05d
+PUT http://localhost:8080/poke-data/trainer-data/63ba2c1898a0c4386448e06d
+content-type: application/json
+
+{
+    "name":"Mr. Prez",
+    "number":"748596",
+    "badges":["Rock","Ghost", "Dark", "Steel"],
+    "height":"1.6 m (5′4″)",
+    "weight":"95.3 kg (210 lbs)"
+}
+
+###
+PUT https://week07.onrender.com/poke-data/pokemon/63ba2c1898a0c4386448e05d
 content-type: application/json
 
 {
@@ -69,7 +118,25 @@ content-type: application/json
 }
 
 ###
- DELETE http://localhost:8080/poke-data/63ccd4f5f85fdda9a1dc01f4
+PUT https://week07.onrender.com/poke-data/trainer-data/63ba2c1898a0c4386448e06c
+content-type: application/json
+
+{
+    "name":"RazzyJay",
+    "number":"102365",
+    "badges":["Fairy","Ground", "Grass", "Electric"],
+    "height":"1.7 m (5′5″)",
+    "weight":"68.0 kg (150 lbs)"
+}
 
 ###
- DELETE https://week07.onrender.com/poke-data/63ccd57115abc0f72ec2ad07
+ DELETE http://localhost:8080/poke-data/pokemon/
+
+ ###
+ DELETE http://localhost:8080/poke-data/trainer-data/
+
+###
+ DELETE https://week07.onrender.com/poke-data/pokemon/
+
+ ###
+ DELETE https://week07.onrender.com/poke-data/trainer-data/
