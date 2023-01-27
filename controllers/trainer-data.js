@@ -5,7 +5,7 @@ const getTrainerData = (req, res) => {
   mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer-data")
+    .collection("trainers")
     .find()
     .toArray((err, lists) => {
       if (err) {
@@ -24,7 +24,7 @@ const getTrainer = (req, res) => {
   mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer-data")
+    .collection("trainers")
     .find({ _id: userId })
     .toArray((err, result) => {
       if (err) {
@@ -47,7 +47,7 @@ const createTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer-data")
+    .collection("trainers")
     .insertOne(trainer);
   if (response.acknowledged) {
     res.status(201).json(response);
@@ -76,7 +76,7 @@ const updateTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer-data")
+    .collection("trainers")
     .replaceOne({ _id: userId }, trainer);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -96,7 +96,7 @@ const deleteTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer-data")
+    .collection("trainers")
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {

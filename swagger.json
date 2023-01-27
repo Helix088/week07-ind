@@ -191,7 +191,7 @@
         }
       }
     },
-    "/trainer-data/": {
+    "/trainers/": {
       "get": {
         "description": "",
         "produces": [
@@ -251,7 +251,7 @@
         }
       }
     },
-    "/trainer-data/{id}": {
+    "/trainers/{id}": {
       "get": {
         "description": "",
         "produces": [

@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 const authO = require("../middleware/authorize.js");
 
-const trainerDataControl = require("../controllers/trainer-data.js");
+const trainerDataControl = require("../controllers/trainers.js");
 const validation = require("../middleware/validate.js");
 
 routes.get("/", trainerDataControl.getTrainerData);
