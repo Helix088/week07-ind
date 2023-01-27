@@ -46,7 +46,7 @@ const createTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer")
+    .collection("trainer-data")
     .insertOne(trainer);
   if (response.acknowledged) {
     res.status(201).json(response);
@@ -74,7 +74,7 @@ const updateTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer")
+    .collection("trainer-data")
     .replaceOne({ _id: userId }, trainer);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -94,7 +94,7 @@ const deleteTrainer = async (req, res) => {
   const response = await mongodb
     .getDb()
     .db("poke-data")
-    .collection("trainer")
+    .collection("trainer-data")
     .deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {

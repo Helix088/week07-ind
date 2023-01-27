@@ -9,19 +9,9 @@ routes.get("/", trainerDataControl.getTrainerData);
 
 routes.get("/:id", trainerDataControl.getTrainer);
 
-routes.post(
-    "/",
-    authO.checkLoggedin,
-    validation.saveTrainer,
-    trainerDataControl.createTrainer
-);
+routes.post("/", authO.checkLoggedin, validation.saveTrainer, trainerDataControl.createTrainer);
 
-routes.put(
-    "/:id",
-    authO.checkLoggedin,
-    validation.saveTrainer,
-    trainerDataControl.updateTrainer
-);
+routes.put("/:id", authO.checkLoggedin, validation.saveTrainer, trainerDataControl.updateTrainer);
 
 routes.delete("/:id", authO.checkLoggedin, trainerDataControl.deleteTrainer);
 
