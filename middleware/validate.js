@@ -31,6 +31,7 @@ module.exports = {
 const saveTrainer = (req, res, next) => {
   const validationRule = {
     name: "required|string",
+    gender: "required|string",
     number: "required|integer",
     badges: "required|array",
     height: "required|string",

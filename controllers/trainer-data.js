@@ -38,6 +38,7 @@ const getTrainer = (req, res) => {
 const createTrainer = async (req, res) => {
   const trainer = {
     name: req.body.name,
+    gender: req.res.gender,
     number: req.body.number,
     badges: req.body.badges,
     height: req.body.height,
@@ -66,6 +67,7 @@ const updateTrainer = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const trainer = {
     name: req.body.name,
+    gender: req.res.gender,
     number: req.body.number,
     badges: req.body.badges,
     height: req.body.height,
