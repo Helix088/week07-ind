@@ -1,31 +1,31 @@
 // LOCALHOST 
 ### 
-GET http://localhost:8080/poke-data/pokemon
+GET http://localhost:8080/poke-data
 
 ###
-GET http://localhost:8080/poke-data/trainer-data
+GET http://localhost:8080/poke-data
 
 ### 
-GET http://localhost:8080/poke-data/pokemon/63ba2c1898a0c4386448e05f
+GET http://localhost:8080/poke-data/63ba2c1898a0c4386448e05f
 
 ### 
-GET http://localhost:8080/poke-data/trainer-data/63ba2c1898a0c4386448e06a
+GET http://localhost:8080/poke-data/63ba2c1898a0c4386448e06a
 
 // PRODUCTION Deploy 
 ### 
-GET https://week07.onrender.com/poke-data/pokemon HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data HTTP/1.1 content-type: application/json
 
 ### 
-GET https://week07.onrender.com/poke-data/trainer-data HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data HTTP/1.1 content-type: application/json
 
 ### 
-GET https://week07.onrender.com/poke-data/pokemon/63ba2c1898a0c4386448e05e HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e05e HTTP/1.1 content-type: application/json
 
 ### 
-GET https://week07.onrender.com/poke-data/trainer-data/63ba2c1898a0c4386448e06b HTTP/1.1 content-type: application/json
+GET https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e06b HTTP/1.1 content-type: application/json
 
 ###
-POST http://localhost:8080/poke-data/pokemon
+POST http://localhost:8080/poke-data/
 content-type: application/json
 
 {
@@ -39,7 +39,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:8080/poke-data/trainer-data
+POST http://localhost:8080/poke-data
 content-type: application/json
 
 {
@@ -52,7 +52,7 @@ content-type: application/json
 
 
 ###
-POST https://week07.onrender.com/poke-data/pokemon
+POST https://week07.onrender.com/poke-data
 content-type: application/json
 
 {
@@ -66,7 +66,7 @@ content-type: application/json
 }
 
 ###
-POST https://week07.onrender.com/poke-data/trainer-data
+POST https://week07.onrender.com/poke-data
 content-type: application/json
 
 {
@@ -78,7 +78,7 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:8080/poke-data/pokemon/63ba2c1898a0c4386448e05a
+PUT http://localhost:8080/poke-data/63ba2c1898a0c4386448e05a
 content-type: application/json
 
 {
@@ -92,7 +92,7 @@ content-type: application/json
 }
 
 ###
-PUT http://localhost:8080/poke-data/trainer-data/63ba2c1898a0c4386448e06d
+PUT http://localhost:8080/poke-data/63ba2c1898a0c4386448e06d
 content-type: application/json
 
 {
@@ -104,7 +104,7 @@ content-type: application/json
 }
 
 ###
-PUT https://week07.onrender.com/poke-data/pokemon/63ba2c1898a0c4386448e05d
+PUT https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e05d
 content-type: application/json
 
 {
@@ -118,7 +118,7 @@ content-type: application/json
 }
 
 ###
-PUT https://week07.onrender.com/poke-data/trainer-data/63ba2c1898a0c4386448e06c
+PUT https://week07.onrender.com/poke-data/63ba2c1898a0c4386448e06c
 content-type: application/json
 
 {
@@ -130,13 +130,13 @@ content-type: application/json
 }
 
 ###
- DELETE http://localhost:8080/poke-data/pokemon/
+ DELETE http://localhost:8080/poke-data/
 
  ###
- DELETE http://localhost:8080/poke-data/trainer-data/
+ DELETE http://localhost:8080/poke-data/
 
 ###
- DELETE https://week07.onrender.com/poke-data/pokemon/
+ DELETE https://week07.onrender.com/poke-data/
 
  ###
- DELETE https://week07.onrender.com/poke-data/trainer-data/
+ DELETE https://week07.onrender.com/poke-data/
