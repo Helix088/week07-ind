@@ -136,7 +136,7 @@ content-type: application/json
  DELETE http://localhost:8080/trainers/
 
 ###
- DELETE https://week07.onrender.com/poke-data/
+ DELETE https://week07.onrender.com/poke-data/63d4f6b28dcb38187f8fdfa9
 
  ###
  DELETE https://week07.onrender.com/trainers/

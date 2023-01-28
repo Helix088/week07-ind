@@ -1,9 +1,8 @@
 const express = require("express");
 const routes = express.Router();
-const oauth2 = require("../middleware/authorize");
-
+const oauth2 = require("../middleware/authorize.js");
 const pokeDataControl = require("../controllers/poke-data");
-const validation = require("../middleware/validate");
+const validation = require("../middleware/validate.js");
 
 routes.get("/", pokeDataControl.getPokeData);
 

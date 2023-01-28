@@ -5,14 +5,13 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongodb = require("./db/connect");
+const { auth, requiresAuth } = require("express-openid-connect");
 
 
 const port = process.env.PORT || 8080;
 
-const { auth, requiresAuth } = require("express-openid-connect");
-
 const config = {
-  authRequired: false,
+  authRequired: true,
   auth0Logout: true,
   secret: process.env.SECRET,
   baseURL: process.env.BASE_URL,
