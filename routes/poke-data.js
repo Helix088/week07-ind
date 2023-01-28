@@ -8,7 +8,7 @@ routes.get("/", pokeDataControl.getPokeData);
 
 routes.get("/:id", pokeDataControl.getPokemon);
 
-routes.post("/", oauth2.checkLoggedin, validation.savePokemon,pokeDataControl.createPokemon);
+routes.post("/", oauth2.checkLoggedin, validation.savePokemon, pokeDataControl.createPokemon);
 
 routes.put("/:id", oauth2.checkLoggedin, validation.savePokemon, pokeDataControl.updatePokemon);
 
