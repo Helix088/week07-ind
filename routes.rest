@@ -3,7 +3,7 @@
 GET http://localhost:8080/poke-data
 
 ###
-GET http://localhost:8080/poke-data/trainers
+GET http://localhost:8080/poke-data
 
 ### 
 GET http://localhost:8080/poke-data/63ba2c1898a0c4386448e05f

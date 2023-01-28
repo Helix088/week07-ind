@@ -24,10 +24,6 @@ const savePokemon = (req, res, next) => {
   });
 };
 
-module.exports = {
-  savePokemon,
-};
-
 const saveTrainer = (req, res, next) => {
   const validationRule = {
     name: "required|string",
@@ -52,5 +48,5 @@ const saveTrainer = (req, res, next) => {
 };
 
 module.exports = {
-  saveTrainer,
+  savePokemon, saveTrainer,
 };

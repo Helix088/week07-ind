@@ -1,5 +1,6 @@
 const createError = require("http-errors");
 const express = require("express");
+const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -7,17 +8,16 @@ const mongodb = require("./db/connect");
 
 
 const port = process.env.PORT || 8080;
-const app = express();
 
 const { auth, requiresAuth } = require("express-openid-connect");
 
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: "a long, randomly-generated string stored in env",
-  baseURL: "http://localhost:8080",
-  clientID: "0QA1mpv1EgePfKWy95324evYlxJVzJqc",
-  issuerBaseURL: "https://dev-qt3fex4vdfmb5dpl.us.auth0.com",
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
 };
 
 
