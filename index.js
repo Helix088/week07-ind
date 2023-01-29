@@ -11,8 +11,8 @@ const { auth, requiresAuth } = require("express-openid-connect");
 const port = process.env.PORT || 8080;
 
 const config = {
-  authRequired: true,
-  auth0Logout: false,
+  authRequired: false,
+  auth0Logout: true,
   secret: process.env.SECRET,
   baseURL: process.env.BASE_URL,
   clientID: process.env.CLIENT_ID,
@@ -53,10 +53,10 @@ app.use(auth(config));
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  console.log(res);
+  console.log("hello, I want to die");
 });
 
 app.get("/profile", requiresAuth(), (req, res) => {
-  console.log(JSON.stringify(req.oidc.user));
+  // console.log(JSON.stringify(req.oidc.user));
   res.send(JSON.stringify(req.oidc.user));
 });
