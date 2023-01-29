@@ -1,7 +1,6 @@
 const express = require("express");
 const routes = express.Router();
 const oauth = require("../middleware/authorize.js");
-
 const trainerDataControl = require("../controllers/trainers");
 const validation = require("../middleware/validate");
 
