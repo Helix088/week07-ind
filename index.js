@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 
 const config = {
   authRequired: true,
-  auth0Logout: true,
+  auth0Logout: false,
   secret: process.env.SECRET,
   baseURL: process.env.BASE_URL,
   clientID: process.env.CLIENT_ID,
@@ -53,6 +53,7 @@ app.use(auth(config));
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  console.log(res);
 });
 
 app.get("/profile", requiresAuth(), (req, res) => {
