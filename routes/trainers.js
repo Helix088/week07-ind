@@ -1,6 +1,6 @@
 const express = require("express");
 const routes = express.Router();
-const security = require("../middleware/authorize.js");
+const oauth = require("../middleware/authorize.js");
 
 const trainerDataControl = require("../controllers/trainers");
 const validation = require("../middleware/validate");
@@ -9,10 +9,10 @@ routes.get("/", trainerDataControl.getTrainerData);
 
 routes.get("/:id", trainerDataControl.getTrainer);
 
-routes.post("/", security.checkLoggedin, validation.saveTrainer, trainerDataControl.createTrainer);
+routes.post("/", oauth.checkLoggedin, validation.saveTrainer, trainerDataControl.createTrainer);
 
-routes.put("/:id", security.checkLoggedin, validation.saveTrainer, trainerDataControl.updateTrainer);
+routes.put("/:id", oauth.checkLoggedin, validation.saveTrainer, trainerDataControl.updateTrainer);
 
-routes.delete("/:id", security.checkLoggedin, trainerDataControl.deleteTrainer);
+routes.delete("/:id", oauth.checkLoggedin, trainerDataControl.deleteTrainer);
 
 module.exports = routes;
