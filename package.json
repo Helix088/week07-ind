@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev-start": "nodemon index.js",
+    "dev-start": "node index.js",
+    "start": "nodemon index.js",
     "swagger": "node ./swagger.js"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "express-validator": "^6.14.3",
     "mongodb": "^4.13.0",
     "node": "^19.4.0",
+    "nodemon": "^2.0.20",
     "swagger-ui-express": "^4.6.0",
     "validatorjs": "^3.22.1"
   },
