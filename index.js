@@ -19,6 +19,19 @@ const config = {
   issuerBaseURL: process.env.ISSUER_BASE_URL,
 };
 
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
+app.get("/profile", requiresAuth(), (req, res) => {
+  // console.log(JSON.stringify(req.oidc.user));
+  res.send(JSON.stringify(req.oidc.user));
+});
+
 app
   .use(express.json())
   .use(bodyParser.json())
@@ -35,19 +48,6 @@ process.on("uncaughtException", (err, origin) => {
     process.stderr.fd,
     `Caught exception: ${err}\n` + `Exception origin: ${origin}`
   );
-});
-
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
-
-// req.isAuthenticated is provided from the auth router
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
-
-app.get("/profile", requiresAuth(), (req, res) => {
-  // console.log(JSON.stringify(req.oidc.user));
-  res.send(JSON.stringify(req.oidc.user));
 });
 
 mongodb.initDb((err, mongodb) => {
