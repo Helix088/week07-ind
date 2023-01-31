@@ -44,6 +44,7 @@ content-type: application/json
 
 {
     "name":"Pauruga",
+    "gender":"female",
     "number":"968574",
     "badges":["Ice, Normal, Flying"],
     "height":"1.7 m (5′07″)",
@@ -136,7 +137,7 @@ content-type: application/json
  DELETE http://localhost:8080/trainers/
 
 ###
- DELETE https://week07.onrender.com/poke-data/63d4f6b28dcb38187f8fdfa9
+ DELETE https://week07.onrender.com/poke-data/63d8785f83bc2f302fe82a22
 
  ###
  DELETE https://week07.onrender.com/trainers/
